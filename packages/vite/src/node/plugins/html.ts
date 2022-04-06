@@ -83,7 +83,7 @@ export function htmlInlineProxyPlugin(config: ResolvedConfig): Plugin {
         const index = Number(proxyMatch[1])
         const file = cleanUrl(id)
         let url = file.replace(normalizePath(config.root), '')
-        if (url.startWith('/ttp')) {
+        if (url.startsWith('/ttp')) {
           url = 'h' + url.substring(1);
         }
         const result = htmlProxyMap.get(config)!.get(url)![index]
